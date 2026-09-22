@@ -1,4 +1,5 @@
 const bookStore = {
+    nconst bookStore = {
     name: 'Flatbooks Technical Books',
     books: [
         {
@@ -6,7 +7,6 @@ const bookStore = {
             title: 'Eloquent JavaScript: A Modern Introduction to Programming',
             author: 'Marjin Haverbeke',
             imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg',
-            
         },
         {
             id:2,
@@ -25,7 +25,6 @@ const bookStore = {
             title: 'JavaScript: The Definitive Guide',
             author: 'David Flanagan',
             imageUrl: "https://images-na.ssl-images-amazon.com/images/I/51wijnc-Y8L._SX379_BO1,204,203,200_.jpg"
-            
         },
         {
             id:5,
@@ -38,10 +37,33 @@ const bookStore = {
             title: 'Cracking the Coding Interview',
             author: 'Gayle Laakmann McDowell',
             imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/41oYsXjLvZL._SY344_BO1,204,203,200_.jpg'
-            
         }
     ]
 }
 
-// Write your code here!
 
+const bookStoreTitle = document.getElementById("header");
+bookStoreTitle.textContent = bookStore.name;
+
+
+const bookList = document.getElementById("book-list");
+
+
+bookStore.books.forEach(book => {
+    const bookContainer = document.createElement("li");
+
+    const bookTitle = document.createElement("h3");
+    bookTitle.textContent = book.title;
+
+    const bookAuthor = document.createElement("p");
+    bookAuthor.textContent = book.author;
+
+    const bookImage = document.createElement("img");
+    bookImage.src = book.imageUrl;
+
+    bookContainer.append(bookTitle, bookAuthor, bookImage);
+    bookList.append(bookContainer);
+});
+
+const deleteThis = document.getElementById("delete-this");
+deleteThis.remove();
