@@ -1,5 +1,4 @@
 const bookStore = {
-    nconst bookStore = {
     name: 'Flatbooks Technical Books',
     books: [
         {
